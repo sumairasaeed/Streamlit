@@ -20,10 +20,6 @@ import wget
 #	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 #	return CAT.load_model_pack(modelurl)
 
-<<<<<<< HEAD
-
-
-
 def loadMedmodel():
 	st.text_area("Explainable Semantic Text Similarity")
 	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
@@ -49,17 +45,8 @@ def loadMedmodel():
 	##st.text_area(str(entities))
 		
 	return file_name_model
-=======
-# def load_image(image_file):
-# 	img = Image.open(image_file)
-# 	return img
 
-def main():
-	st.title("Explainable Semantic Text Similarity")
-	raw_text = st.text_area("Enter text here")
-	docx_file = st.file_uploader("Upload Document", type=["txt"])
-	
->>>>>>> dba8a99... Update explainableSTS.py
+
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
