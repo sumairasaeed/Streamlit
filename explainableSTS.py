@@ -1,7 +1,7 @@
 import streamlit as st
 import docx2txt
 import streamlit.components.v1 as components
-import pickle5 as pickle
+import pickle
 
 
 def loadEntities():
