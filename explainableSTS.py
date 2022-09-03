@@ -10,7 +10,8 @@ def main():
 	st.title("Explainable Semantic Text Similarity")
 	raw_text = st.text_area("Enter text here please")
 	docx_file = st.file_uploader("Upload Document", type=["txt"])
-	PYM=get_ontology("http://PYM/").load()
+	PYM=get_ontology("http://PYM/")
+	PYM.load()
 	SNOMEDCT_US = PYM["SNOMEDCT_US"]
 	concept = SNOMEDCT_US[302509004]
 	st.header(concept)
