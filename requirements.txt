@@ -2,4 +2,8 @@ docx2txt==0.8
 streamlit==1.11.1
 numpy==1.20.2
 click==8.0
+<<<<<<< HEAD
 pickle5==0.0.11
+=======
+pickle5==0.0.11
+>>>>>>> 39865e7345de11f0d535f2f442ff3c249ffc0689
