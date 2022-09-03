@@ -2,6 +2,10 @@ import streamlit as st
 import docx2txt
 import streamlit.components.v1 as components
 
+from owlready2 import *
+from owlready2.pymedtermino2 import *
+from owlready2.pymedtermino2.umls import *
+
 def main():
 	st.title("Explainable Semantic Text Similarity")
 	raw_text = st.text_area("Enter text here please")
