@@ -15,7 +15,7 @@ def loadEntities():
 def main():
 	st.title("Explainable Semantic Text Similarity")
 	alltextEntitiesAllStr=loadEntities()
-	raw_text = st.text_area(str(alltextEntitiesAllStr[0]))
+	raw_text = st.text_area(str(alltextEntitiesAllStr[0:10]))
 	##raw_text = st.text_area("Enter text here please")
 	docx_file = st.file_uploader("Upload Document", type=["txt"])
 	
