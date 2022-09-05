@@ -7,6 +7,10 @@ from owlready2.pymedtermino2 import *
 from owlready2.pymedtermino2.umls import *
 from owlready2 import *
 import simple_icd_10 as icd
+from medcat.vocab import Vocab
+from medcat.cdb import CDB
+from medcat.cat import CAT
+from medcat.meta_cat import MetaCAT
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
