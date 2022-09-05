@@ -6,6 +6,7 @@ from owlready2 import *
 from owlready2.pymedtermino2 import *
 from owlready2.pymedtermino2.umls import *
 from owlready2 import *
+import simple_icd_10 as icd
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -23,6 +24,7 @@ def loadProbCalc():
         return alltextEntitiesAllStrForProbCalc
 def main():        
 	st.title("Explainable Semantic Text Similarity")
+	st.title(str(icd.get_description("XII")))
 	#PYM = get_ontology("http://PYM/")
 	#SNOMEDCT_US = PYM["SNOMEDCT_US"]
 	#raw_text = st.text_area(str(SNOMEDCT_US[302509004]))
