@@ -4,6 +4,10 @@ import streamlit.components.v1 as components
 import pickle
 from owlready2 import *
 import simple_icd_10 as icd
+from medcat.vocab import Vocab
+from medcat.cdb import CDB
+from medcat.cat import CAT
+from medcat.meta_cat import MetaCAT
 
 
 
