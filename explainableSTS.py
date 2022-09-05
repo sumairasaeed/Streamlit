@@ -42,7 +42,7 @@ def main():
 	vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
 	if vocab_file is not None:
             path_in = vocab_file.name
-            print(path_in)
+            vocabpath=st.text_area(str(path_in))
 	else:
             path_in = None
 	
