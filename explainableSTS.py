@@ -31,9 +31,10 @@ def main():
         #concept = SNOMEDCT_US[302509004]
         #print(concept)
 	alltextEntitiesAllStr=loadEntities()
-	raw_text = st.text_area(str(alltextEntitiesAllStr[6]))
-	for x in alltextEntitiesAllStr[6][3]:
-		st.title(str(icd.get_description(str(x))))
+	raw_text = st.text_area(str(alltextEntitiesAllStr[5]))
+	for x in alltextEntitiesAllStr[5][3]:
+		if x!="":
+			st.title(str(icd.get_description(str(x))))
 	#raw_text = st.text_area("Enter text here please")
 	#default_world.set_backend(filename = "pym.sqlite3")
 	#PYM = get_ontology("http://PYM/")
