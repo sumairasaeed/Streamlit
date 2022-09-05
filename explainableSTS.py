@@ -31,11 +31,13 @@ def main():
         #concept = SNOMEDCT_US[302509004]
         #print(concept)
 	alltextEntitiesAllStr=loadEntities()
-	raw_text = st.text_area(str(alltextEntitiesAllStr[0:10]))
+	raw_text = st.text_area(str(alltextEntitiesAllStr[6][4]))
+	for x in alltextEntitiesAllStr[6][4]:
+		st.title(str(icd.get_description(str(x))))
 	#raw_text = st.text_area("Enter text here please")
 	#default_world.set_backend(filename = "pym.sqlite3")
-	PYM = get_ontology("http://PYM/")
-	PYM.load()
+	#PYM = get_ontology("http://PYM/")
+	#PYM.load()
 	#ICD10 = PYM["ICD10"]
 	docx_file = st.file_uploader("Upload Document", type=["txt"])
 	#raw_text = st.text_area(str(ICD10["E10"]))
