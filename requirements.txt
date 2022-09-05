@@ -5,3 +5,4 @@ click==8.0
 pickle-mixin==1.0.2
 Owlready2==0.36
 simple-icd-10==2.0.1
+medcat==1.2.7
