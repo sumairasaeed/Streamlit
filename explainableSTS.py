@@ -43,6 +43,13 @@ def main():
 	#PYM.load()
 	#ICD10 = PYM["ICD10"]
 	#!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
+	datafile = st.file_uploader("Upload_dat",type=['.dat'])
+	if datafile is not None:
+	   file_details = {"FileName":datafile.name,"FileType":datafile.type}
+	   df  = pd.read_csv(datafile)
+	   st.dataframe(df)
+	   save_uploadedfile(datafile)
+		
 	vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
 	if vocab_file is not None:
             path_in = vocab_file.name
