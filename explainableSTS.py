@@ -33,9 +33,9 @@ def main():
 	#raw_text = st.text_area("Enter text here please")
 	#default_world.set_backend(filename = "pym.sqlite3")
 	PYM = get_ontology("http://PYM/").load()
-	ICD10 = PYM["ICD10"]
+	#ICD10 = PYM["ICD10"]
 	docx_file = st.file_uploader("Upload Document", type=["txt"])
-	raw_text = st.text_area(str(ICD10["E10"]))
+	#raw_text = st.text_area(str(ICD10["E10"]))
 
 if __name__ == '__main__':
 	main()
