@@ -3,5 +3,5 @@ streamlit==1.11.1
 numpy==1.20.2
 click==8.0
 pickle-mixin==1.0.2
-owlready2==0.38
-simple-icd-10==2.0.1
+simple-icd-10==2.0
+Owlready2==0.36
