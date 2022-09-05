@@ -43,14 +43,14 @@ def main():
 	if vocab_file is not None:
             path_in = vocab_file.name
             print(path_in)
-        else:
+	else:
             path_in = None
 	
 	cdb_file = st.file_uploader("Upload Document", type=[".dat"])
 	if cdb_file is not None:
             path_in_cdb_file = cdb_file.name
             print(path_in_cdb_file)
-        else:
+	else:
             path_in = None
 	#raw_text = st.text_area(str(ICD10["E10"]))
 
