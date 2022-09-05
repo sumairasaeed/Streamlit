@@ -31,8 +31,8 @@ def main():
         #concept = SNOMEDCT_US[302509004]
         #print(concept)
 	alltextEntitiesAllStr=loadEntities()
-	raw_text = st.text_area(str(alltextEntitiesAllStr[5]))
-	for x in alltextEntitiesAllStr[5][3]:
+	raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
+	for x in alltextEntitiesAllStr[8][3]:
 		if x!="":
 			st.title(str(icd.get_description(str(x))))
 			st.title(str(icd.get_description(icd.get_parent(str(x)))))
