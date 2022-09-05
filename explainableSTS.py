@@ -46,8 +46,8 @@ def main():
 	datafile = st.file_uploader("Upload_dat",type=['.dat'])
 	if datafile is not None:
 	   file_details = {"FileName":datafile.name,"FileType":datafile.type}
-	   df  = pd.read_csv(datafile)
-	   st.dataframe(df)
+	   #df  = pd.read_csv(datafile)
+	   #st.dataframe(df)
 	   save_uploadedfile(datafile)
 		
 	vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
