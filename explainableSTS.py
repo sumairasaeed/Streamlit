@@ -38,7 +38,7 @@ def main():
 	#PYM = get_ontology("http://PYM/")
 	#PYM.load()
 	#ICD10 = PYM["ICD10"]
-	!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
+	#!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
 	vocab_file = st.file_uploader("Upload Document", type=[".dat"])
 	if vocab_file is not None:
             path_in = vocab_file.name
