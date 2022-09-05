@@ -35,6 +35,7 @@ def main():
 	for x in alltextEntitiesAllStr[5][3]:
 		if x!="":
 			st.title(str(icd.get_description(str(x))))
+			st.title(str(icd.get_parent(str(x))))
 	#raw_text = st.text_area("Enter text here please")
 	#default_world.set_backend(filename = "pym.sqlite3")
 	#PYM = get_ontology("http://PYM/")
