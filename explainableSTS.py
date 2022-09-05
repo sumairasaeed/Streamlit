@@ -39,14 +39,14 @@ def main():
 	#PYM.load()
 	#ICD10 = PYM["ICD10"]
 	#!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
-	vocab_file = st.file_uploader("Upload Document", type=[".dat"])
+	vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
 	if vocab_file is not None:
             path_in = vocab_file.name
             print(path_in)
 	else:
             path_in = None
 	
-	cdb_file = st.file_uploader("Upload Document", type=[".dat"])
+	cdb_file = st.file_uploader("upload_cdb", type=[".dat"])
 	if cdb_file is not None:
             path_in_cdb_file = cdb_file.name
             print(path_in_cdb_file)
