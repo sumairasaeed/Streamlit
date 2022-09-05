@@ -32,8 +32,10 @@ def loadProbCalc():
         file.close()
         return alltextEntitiesAllStrForProbCalc
 def main():
+        alltextEntitiesAllStr=loadEntities()
         raw_text = st.text_area("Enter text here please")
         docx_file = st.file_uploader("Upload Document", type=["txt"])
+        raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
         st.title(str(icd.get_description("XII")))
         # Load the vocab model you downloaded
         #vocab = Vocab.load('vocab.dat')
@@ -54,7 +56,7 @@ def main():
         #concept = SNOMEDCT_US[302509004]
         #print(concept)
 	#alltextEntitiesAllStr=loadEntities()
-	#raw_text = st.text_area(str(alltextEntitiesAllStr[0:10]))
+	#raw_text = st.text_area(str(alltextEntitiesAllStr[0:5]))
 	
 	
 
