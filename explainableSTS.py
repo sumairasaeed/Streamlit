@@ -42,7 +42,8 @@ def main():
 	#filename = url.split('/')[-1]
 
 	#urllib.request.urlretrieve(url, filename)
-	site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
+	#site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
+	site_url = 'https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing'
 	file_name = wget.download(site_url)
 	print(file_name)
 	st.title(file_name)
