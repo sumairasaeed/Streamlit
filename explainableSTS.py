@@ -33,6 +33,13 @@ def save_uploadedfile(uploadedfile):
      return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
+	import urllib.request
+
+	url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
+	filename = url.split('/')[-1]
+
+	urllib.request.urlretrieve(url, filename)
+	st.title(str(url,filename))
 	alltextEntitiesAllStr=loadEntities()
 	raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
 	for x in alltextEntitiesAllStr[8][3]:
