@@ -4,5 +4,5 @@ click==8.0
 pickle-mixin==1.0.2
 Owlready2==0.36
 simple-icd-10==2.0.1
-pip install --upgrade medcat -f https://download.pytorch.org/whl/torch_stable.html
+pip install medcat -f https://download.pytorch.org/whl/torch_stable.html
 
