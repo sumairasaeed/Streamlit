@@ -11,7 +11,9 @@ from medcat.meta_cat import MetaCAT
 DATA_DIR = "./data/"
 MODEL_DIR = "./models/"
 model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
-#!pip install wget
+import wget
+
+
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -33,14 +35,17 @@ def save_uploadedfile(uploadedfile):
      return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
-	!python -m wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./models/
+	#!python -m wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./models/
 	#import urllib.request
 
 	#url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
 	#filename = url.split('/')[-1]
 
 	#urllib.request.urlretrieve(url, filename)
-	st.title(filename)
+	site_url = 'http://www.randomdatabase.com/database_files/csv/main_database.csv'
+	file_name = wget.download(site_url)
+	print(file_name)
+	st.title(file_name)
 	alltextEntitiesAllStr=loadEntities()
 	raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
 	for x in alltextEntitiesAllStr[8][3]:
