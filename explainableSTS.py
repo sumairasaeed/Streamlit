@@ -42,7 +42,7 @@ def main():
 	#filename = url.split('/')[-1]
 
 	#urllib.request.urlretrieve(url, filename)
-	site_url = 'http://www.randomdatabase.com/database_files/csv/main_database.csv'
+	site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
 	file_name = wget.download(site_url)
 	print(file_name)
 	st.title(file_name)
