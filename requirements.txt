@@ -5,4 +5,4 @@ pickle-mixin==1.0.2
 Owlready2==0.36
 simple-icd-10==2.0.1
 pip install --upgrade medcat -f https://download.pytorch.org/whl/torch_stable.html
-https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip
+
