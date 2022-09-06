@@ -52,12 +52,12 @@ def main():
 	cat = CAT.load_model_pack(file_name)
 
 	# Test it
-	text = "My simple document with kidney failure"
+	text = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	st.text_area(str(entities))
 	#alltextEntitiesAllStr=loadEntities()
 	#raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
-	f#or x in alltextEntitiesAllStr[8][3]:
+	#for x in alltextEntitiesAllStr[8][3]:
 	#	if x!="":
 	#		st.title(str(icd.get_description(str(x))))
 	#		st.title(str(icd.get_description(icd.get_parent(str(x)))))
