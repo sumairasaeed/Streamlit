@@ -39,7 +39,7 @@ def main():
 	filename = url.split('/')[-1]
 
 	urllib.request.urlretrieve(url, filename)
-	st.title(str(url,filename))
+	st.title(filename)
 	alltextEntitiesAllStr=loadEntities()
 	raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
 	for x in alltextEntitiesAllStr[8][3]:
