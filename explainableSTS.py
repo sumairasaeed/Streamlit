@@ -46,12 +46,21 @@ def main():
 	file_name = wget.download(site_url)
 	print(file_name)
 	st.title(file_name)
-	alltextEntitiesAllStr=loadEntities()
-	raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
-	for x in alltextEntitiesAllStr[8][3]:
-		if x!="":
-			st.title(str(icd.get_description(str(x))))
-			st.title(str(icd.get_description(icd.get_parent(str(x)))))
+	from medcat.cat import CAT
+
+	# Download the model_pack from the models section in the github repo.
+	cat = CAT.load_model_pack(file_name)
+
+	# Test it
+	text = "My simple document with kidney failure"
+	entities = cat.get_entities(text)
+	st.text_area(str(entities))
+	#alltextEntitiesAllStr=loadEntities()
+	#raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
+	f#or x in alltextEntitiesAllStr[8][3]:
+	#	if x!="":
+	#		st.title(str(icd.get_description(str(x))))
+	#		st.title(str(icd.get_description(icd.get_parent(str(x)))))
 	#raw_text = st.text_area("Enter text here please")
 	#default_world.set_backend(filename = "pym.sqlite3")(
 	#PYM = get_ontology("http://PYM/")
