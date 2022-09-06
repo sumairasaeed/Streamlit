@@ -5,4 +5,4 @@ pickle-mixin==1.0.2
 Owlready2==0.36
 simple-icd-10==2.0.1
 medcat==1.2.7
-https://medcat.rosalind.kcl.ac.uk/media/vocab.dat
+https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/Ef7hLccraT5ErM6AnB_2ynwBDm4AC89ySWMn5AO8Fk8-1w?e=7ThgAJ
