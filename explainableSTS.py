@@ -8,7 +8,9 @@ from medcat.vocab import Vocab
 from medcat.cdb import CDB
 from medcat.cat import CAT
 from medcat.meta_cat import MetaCAT
-
+DATA_DIR = "./data/"
+MODEL_DIR = "./models/"
+model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 
 
 def loadEntities():
