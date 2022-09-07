@@ -1,3 +1,4 @@
+import requests
 import streamlit as st
 import docx2txt
 import streamlit.components.v1 as components
