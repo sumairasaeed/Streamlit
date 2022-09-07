@@ -11,7 +11,7 @@ from medcat.cat import CAT
 from medcat.meta_cat import MetaCAT
 DATA_DIR = "./data/"
 MODEL_DIR = "./models/"
-model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
+#model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
 
@@ -47,7 +47,8 @@ def main():
 	#url='https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
 	#status=urllib.request.urlretrieve(url, '/snomedsimple.zip')
 	#site_url = 'https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
-	site_url1='https://www.dropbox.com/s/be6fn4x21tvbdcn/medmen_wstatus_2021_oct.zip?dl=0'
+	site_url1='https://www.dropbox.com/s/be6fn4x21tvbdcn/medmen_wstatus_2021_oct.zip"
+	#?dl=0'
 	site_url2='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip?dl=0'
 	##file_name = wget.download(site_url)
 	#model_pack_path=file_name
