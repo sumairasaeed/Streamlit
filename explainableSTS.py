@@ -25,13 +25,13 @@ def loadMedmodel():
 	##with open(file_name,'wb') as output_file:
 	##    output_file.write(req.content)
 	
-	st.title(file_name_model)
+	
 	file_name_model="mymedmodel.zip"
 	req = requests.get(modelurl)
 	with open(file_name_model,'wb') as output_file:
 	    output_file.write(req.content)
 	#print('Downloading Completed')
-	
+	st.title(file_name_model)
 	##cat = CAT.load_model_pack(file_name_model)
 	##text = "My simple document with kidney failure and fever and cough and flue"
 	##entities = cat.get_entities(text)
