@@ -120,9 +120,9 @@ def main():
 	##    output_file.write(req.content)
 	
 	##st.title(file_name)
-	file_name=loadMEdmodel()
-	if res==1:
-		cat = CAT.load_model_pack(file_name)
+	file_name_model=loadMEdmodel()
+	if file_name_model:
+		cat = CAT.load_model_pack(file_name_model)
 		text = "My simple document with kidney failure and fever and cough and flue"
 		entities = cat.get_entities(text)
 		st.text_area(str(entities))
