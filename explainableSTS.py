@@ -96,14 +96,15 @@ def main():
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
 	#cat = CAT.load_model_pack("./code.zip")
 	#cat = CAT.load_model_pack(file_name)
-	modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	#file_name = wget.download(modelurl)
-	file_name="myfile.zip"
+	modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	file_name = wget.download(modelurl)
+	##file_name="myfile.zip"
 	#req=urllib.request.urlretrieve(modelurl, file_name)
-	req = requests.get(modelurl)
+	##req = requests.get(modelurl)
 	# Writing the file to the local file system
-	with open(file_name,'wb') as output_file:
-	    output_file.write(req.content)
+	##with open(file_name,'wb') as output_file:
+	##    output_file.write(req.content)
 	
 	st.title(file_name)
 	cat = CAT.load_model_pack(file_name)
