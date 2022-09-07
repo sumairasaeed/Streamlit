@@ -93,7 +93,7 @@ def main():
 	#PYM.load()
 	#ICD10 = PYM["ICD10"]
 	#!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
-	data_file = st.file_uploader("Upload_dat",type=['.dat'])
+	datafile = st.file_uploader("Upload_dat",type=['.dat'])
 	if datafile is not None:
 	   file_details = {"FileName":datafile.name,"FileType":datafile.type}
 	   #df  = pd.read_csv(datafile)
