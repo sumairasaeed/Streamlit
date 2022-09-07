@@ -61,17 +61,17 @@ def main():
 	##st.title(status)
 	#st.title(file_name)
 	
-	from medcat.cat import CAT
+	####from medcat.cat import CAT
 
 	# Download the model_pack from the models section in the github repo.
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
 	#cat = CAT.load_model_pack("./code.zip")
-	cat = CAT.load_model_pack(file_name)
+	####cat = CAT.load_model_pack(file_name)
 
 	# Test it
-	text = "My simple document with kidney failure and fever and cough and flue"
-	entities = cat.get_entities(text)
-	st.text_area(str(entities))
+	###text = "My simple document with kidney failure and fever and cough and flue"
+	###entities = cat.get_entities(text)
+	####st.text_area(str(entities))
 	#alltextEntitiesAllStr=loadEntities()
 	#raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
 	#for x in alltextEntitiesAllStr[8][3]:
