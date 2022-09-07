@@ -14,6 +14,19 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
+def loadMEdmodel():
+	modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	file_name = wget.download(modelurl)
+	##file_name="myfile.zip"
+	#req=urllib.request.urlretrieve(modelurl, file_name)
+	##req = requests.get(modelurl)
+	# Writing the file to the local file system
+	##with open(file_name,'wb') as output_file:
+	##    output_file.write(req.content)
+	
+	st.title(file_name)
+	return 1
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -96,9 +109,9 @@ def main():
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
 	#cat = CAT.load_model_pack("./code.zip")
 	#cat = CAT.load_model_pack(file_name)
-	modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	##modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	file_name = wget.download(modelurl)
+	##file_name = wget.download(modelurl)
 	##file_name="myfile.zip"
 	#req=urllib.request.urlretrieve(modelurl, file_name)
 	##req = requests.get(modelurl)
@@ -106,13 +119,16 @@ def main():
 	##with open(file_name,'wb') as output_file:
 	##    output_file.write(req.content)
 	
-	st.title(file_name)
-	cat = CAT.load_model_pack(file_name)
+	##st.title(file_name)
+	res=loadMEdmodel()
+	if res==1:
+		cat = CAT.load_model_pack(file_name)
+		text = "My simple document with kidney failure and fever and cough and flue"
+		entities = cat.get_entities(text)
+		st.text_area(str(entities))
 
 	# Test it
-	text = "My simple document with kidney failure and fever and cough and flue"
-	entities = cat.get_entities(text)
-	st.text_area(str(entities))
+	
 	#alltextEntitiesAllStr=loadEntities()
 	#raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
 	#for x in alltextEntitiesAllStr[8][3]:
