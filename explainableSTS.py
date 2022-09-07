@@ -102,7 +102,7 @@ def main():
 	req=urllib.request.urlretrieve(modelurl, file_name)
 	######req = requests.get(modelurl)
 	# Writing the file to the local file system
-	with open(filenamemodelpack,'wb') as output_file:
+	with open(file_name,'wb') as output_file:
 	    output_file.write(req.content)
 	
 	st.title(file_name)
