@@ -35,6 +35,7 @@ def save_uploadedfile(uploadedfile):
      return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
+	
 	#!python -m wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./models/
 	#import urllib.request
 
@@ -53,26 +54,26 @@ def main():
 	##file_name = wget.download(site_url)
 	#model_pack_path=file_name
 	file_name1="mcmodelpack.zip"
-	req = requests.get(url)
+	###############req = requests.get(url)
 	# Writing the file to the local file system
-	with open(file_name1,'wb') as output_file:
-	    output_file.write(req.content)
-	print('Downloading Completed')
+	#with open(file_name1,'wb') as output_file:
+	 #   output_file.write(req.content)
+	#print('Downloading Completed')
 	
 	
 	####WORKING
 
-	file_name = site_url.split('/')[-1]
+	#file_name = site_url.split('/')[-1]
 
 	#req=urllib.request.urlretrieve(site_url, file_name)
-	req = requests.get(site_url1)
+	#############req = requests.get(site_url1)
 	# Writing the file to the local file system
-	with open(file_name,'wb') as output_file:
-	    output_file.write(req.content)
+	#with open(file_name,'wb') as output_file:
+	 #   output_file.write(req.content)
 	print('Downloading Completed')
 	####WORKING
-	print(file_name)
-	st.title(file_name)
+	#print(file_name)
+	#st.title(file_name)
 	#file_name='medmen_wstatus_2021_oct.zip'
 	#status = requests.get(site_url)
 	#urllib.request.urlretrieve(site_url, "./code.zip")
@@ -86,7 +87,7 @@ def main():
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
 	#cat = CAT.load_model_pack("./code.zip")
 	#cat = CAT.load_model_pack(file_name)
-	cat = CAT.load_model_pack(file_name1)
+	cat = CAT.load_model_pack("https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
 
 	# Test it
 	text = "My simple document with kidney failure and fever and cough and flue"
