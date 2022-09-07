@@ -55,17 +55,18 @@ def main():
 	#print(file_name)
 	#st.title(file_name)
 	#file_name='medmen_wstatus_2021_oct.zip'
-	file_name = requests.get(site_url)
+	status = requests.get(site_url)
 	##status=urllib.request.urlretrieve(site_url, file_name)
 	##st.title(status)
 	#st.title(file_name)
-	st.title(file_name)
+	st.title(status)
+	open('med.zip', 'wb').write(status.content)
 	from medcat.cat import CAT
 
 	# Download the model_pack from the models section in the github repo.
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
-
-	cat = CAT.load_model_pack(file_name)
+	cat = CAT.load_model_pack("med.zip")
+	#cat = CAT.load_model_pack(file_name)
 
 	# Test it
 	text = "My simple document with kidney failure and fever and cough and flue"
