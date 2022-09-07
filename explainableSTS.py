@@ -32,9 +32,9 @@ def loadMedmodel():
 	    output_file.write(req.content)
 	#print('Downloading Completed')
 	st.title(file_name_model)
-	cat = CAT.load_model_pack(file_name_model)
-	ext = "My simple document with kidney failure and fever and cough and flue"
-	entities = cat.get_entities(text)
+	##cat = CAT.load_model_pack(file_name_model)
+	##ext = "My simple document with kidney failure and fever and cough and flue"
+	###entities = cat.get_entities(text)
 	##st.text_area(str(entities))
 		
 	return file_name_model
@@ -133,6 +133,10 @@ def main():
 	##st.title(file_name)
 	status=loadMedmodel()
 	st.title(status)
+	cat = CAT.load_model_pack(status)
+	ext = "My simple document with kidney failure and fever and cough and flue"
+	entities = cat.get_entities(text)
+	st.text_area(str(entities))
 	# Test it
 	
 	#alltextEntitiesAllStr=loadEntities()
