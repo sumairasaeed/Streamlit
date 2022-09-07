@@ -56,7 +56,7 @@ def main():
 	#st.title(file_name)
 	#file_name='medmen_wstatus_2021_oct.zip'
 	#status = requests.get(site_url)
-	urllib.urlretrieve(site_url, "code.zip")
+	urllib.request.urlretrieve(site_url, "code.zip")
 	##status=urllib.request.urlretrieve(site_url, file_name)
 	##st.title(status)
 	#st.title(file_name)
