@@ -6,4 +6,4 @@ Owlready2==0.36
 simple-icd-10==2.0.1
 medcat==1.2.7
 wget==3.2
-
+https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip
