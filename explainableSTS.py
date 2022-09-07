@@ -47,7 +47,7 @@ def main():
 	#url='https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
 	#status=urllib.request.urlretrieve(url, '/snomedsimple.zip')
 	#site_url = 'https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
-	site_url='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip
+	site_url='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip'
 	#?dl=0'
 	file_name = wget.download(site_url)
 	#print(file_name)
