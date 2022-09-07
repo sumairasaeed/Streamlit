@@ -50,7 +50,7 @@ def main():
 	site_url1='https://www.dropbox.com/s/be6fn4x21tvbdcn/medmen_wstatus_2021_oct.zip?dl=0'
 	site_url2='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip?dl=0'
 	##file_name = wget.download(site_url)
-	model_pack_path=file_name
+	#model_pack_path=file_name
 	
 	filename = site_url.split('/')[-1]
 
