@@ -132,7 +132,7 @@ def main():
 	
 	##st.title(file_name)
 	#status=loadMedmodel()
-	#st.title(status)
+	st.title("Welcome to Explainable Semantic Text Similarity Demo App")
 	cat = CAT.load_model_pack("mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
 	ext = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
@@ -151,26 +151,26 @@ def main():
 	#PYM.load()
 	#ICD10 = PYM["ICD10"]
 	#!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
-	datafile = st.file_uploader("Upload_dat",type=['.dat'])
-	if datafile is not None:
-	   file_details = {"FileName":datafile.name,"FileType":datafile.type}
+	#datafile = st.file_uploader("Upload_dat",type=['.dat'])
+	#if datafile is not None:
+	 #  file_details = {"FileName":datafile.name,"FileType":datafile.type}
 	   #df  = pd.read_csv(datafile)
 	   #st.dataframe(df)
-	   save_uploadedfile(datafile)
+	  # save_uploadedfile(datafile)
 		
-	vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
-	if vocab_file is not None:
-            path_in = vocab_file.name
-            vocabpath=st.text_area(str(path_in))
-	else:
-            path_in = None
+	#vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
+	#if vocab_file is not None:
+         #   path_in = vocab_file.name
+          #  vocabpath=st.text_area(str(path_in))
+	#else:
+         #   path_in = None
 	
-	cdb_file = st.file_uploader("upload_cdb", type=[".dat"])
-	if cdb_file is not None:
-            path_in_cdb_file = cdb_file.name
-            print(path_in_cdb_file)
-	else:
-            path_in = None
+	#cdb_file = st.file_uploader("upload_cdb", type=[".dat"])
+	#if cdb_file is not None:
+         #   path_in_cdb_file = cdb_file.name
+          #  print(path_in_cdb_file)
+	#else:
+         #   path_in = None
 	#raw_text = st.text_area(str(ICD10["E10"]))
 
 if __name__ == '__main__':
