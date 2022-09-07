@@ -53,7 +53,7 @@ def main():
 	#file_name = wget.download(site_url)
 	#print(file_name)
 	#st.title(file_name)
-	file_name='medmen_wstatus_2021_oct.zip'
+	#file_name='medmen_wstatus_2021_oct.zip'
 	status=urllib.request.urlretrieve(site_url, file_name)
 	st.title(status)
 	st.title(file_name)
