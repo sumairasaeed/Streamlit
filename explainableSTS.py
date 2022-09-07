@@ -50,8 +50,12 @@ def main():
 	site_url='https://www.dropbox.com/s/be6fn4x21tvbdcn/medmen_wstatus_2021_oct.zip?dl=0'
 	#'https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip'
 	#?dl=0'
-	file_name = wget.download(site_url)
+	#file_name = wget.download(site_url)
 	#print(file_name)
+	#st.title(file_name)
+	file_name='medmen_wstatus_2021_oct.zip'
+	status=urllib.request.urlretrieve(site_url, file_name)
+	st.title(status)
 	st.title(file_name)
 	from medcat.cat import CAT
 
