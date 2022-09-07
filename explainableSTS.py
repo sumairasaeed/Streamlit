@@ -131,9 +131,9 @@ def main():
 	##    output_file.write(req.content)
 	
 	##st.title(file_name)
-	status=loadMedmodel()
-	st.title(status)
-	cat = CAT.load_model_pack(status)
+	#status=loadMedmodel()
+	#st.title(status)
+	cat = CAT.load_model_pack("mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
 	ext = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	st.text_area(str(entities))
