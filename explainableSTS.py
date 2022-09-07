@@ -14,7 +14,7 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
-def loadMEdmodel():
+def loadMedmodel():
 	modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	file_name_model = wget.download(modelurl)
