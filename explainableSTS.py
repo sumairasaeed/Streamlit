@@ -15,7 +15,6 @@ model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
 
-
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
 	file = open("alltextEntitiesKaggleStrDisordersNew.data",'rb')
@@ -53,7 +52,7 @@ def main():
 	#?dl=0'
 	file_name = wget.download(site_url)
 	print(file_name)
-	#st.title(file_name)
+	st.title(file_name)
 	#file_name='medmen_wstatus_2021_oct.zip'
 	#status = requests.get(site_url)
 	#urllib.request.urlretrieve(site_url, "./code.zip")
