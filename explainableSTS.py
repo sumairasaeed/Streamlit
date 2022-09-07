@@ -53,7 +53,9 @@ def main():
 	from medcat.cat import CAT
 
 	# Download the model_pack from the models section in the github repo.
-	cat = CAT.load_model_pack(file_name)
+	cat = CAT.load_model_pack('snomedsimple')
+
+	#cat = CAT.load_model_pack(file_name)
 
 	# Test it
 	text = "My simple document with kidney failure and fever and cough and flue"
