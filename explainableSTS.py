@@ -38,7 +38,7 @@ def main():
 	#!python -m wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./models/
 	#import urllib.request
 
-	#url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
+	site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
 	#filename = url.split('/')[-1]
 
 	#urllib.request.urlretrieve(url, filename)
@@ -50,7 +50,7 @@ def main():
 	site_url1='https://www.dropbox.com/s/be6fn4x21tvbdcn/medmen_wstatus_2021_oct.zip?dl=0'
 	#site_url2='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip'
 	#?dl=0'
-	file_name = wget.download(site_url1)
+	file_name = wget.download(site_url)
 	print(file_name)
 	st.title(file_name)
 	#file_name='medmen_wstatus_2021_oct.zip'
