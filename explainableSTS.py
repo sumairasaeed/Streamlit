@@ -52,7 +52,7 @@ def main():
 	##file_name = wget.download(site_url)
 	#model_pack_path=file_name
 	
-	filename = site_url.split('/')[-1]
+	file_name = site_url.split('/')[-1]
 
 	urllib.request.urlretrieve(site_url, file_name)
 	
