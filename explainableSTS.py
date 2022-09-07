@@ -65,7 +65,7 @@ def main():
 	# Download the model_pack from the models section in the github repo.
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
 	#cat = CAT.load_model_pack("./code.zip")
-	####cat = CAT.load_model_pack(file_name)
+	cat = CAT.load_model_pack(file_name)
 
 	# Test it
 	###text = "My simple document with kidney failure and fever and cough and flue"
