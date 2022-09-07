@@ -98,8 +98,8 @@ def main():
 	#file_name = site_url.split('/')[-1]
 	modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	filenamemodelpack = modelurl.split('/')[-1]
-	req=urllib.request.urlretrieve(modelurl, filenamemodelpack)
-	######req = requests.get(modelurl)
+	#req=urllib.request.urlretrieve(modelurl, filenamemodelpack)
+	req = requests.get(modelurl)
 	# Writing the file to the local file system
 	with open(filenamemodelpack,'wb') as output_file:
 	    output_file.write(req.content)
