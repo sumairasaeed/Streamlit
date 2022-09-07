@@ -96,13 +96,13 @@ def main():
 	####WORKING
 
 	#file_name = site_url.split('/')[-1]
-	#####modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	#####filenamemodelpack = modelurl.split('/')[-1]
-	#req=urllib.request.urlretrieve(modelurl, filenamemodelpack)
+	modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	filenamemodelpack = modelurl.split('/')[-1]
+	req=urllib.request.urlretrieve(modelurl, filenamemodelpack)
 	######req = requests.get(modelurl)
 	# Writing the file to the local file system
-	#####with open(filenamemodelpack,'wb') as output_file:
-	#######    output_file.write(req.content)
+	with open(filenamemodelpack,'wb') as output_file:
+	    output_file.write(req.content)
 	print('Downloading Completed')
 	####WORKING
 	#print(file_name)
@@ -133,7 +133,7 @@ def main():
 	##st.title(file_name)
 	#status=loadMedmodel()
 	#st.title(status)
-	cat = CAT.load_model_pack("mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
+	cat = CAT.load_model_pack(filenamemodelpack)
 	ext = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	st.text_area(str(entities))
