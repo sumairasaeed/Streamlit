@@ -17,7 +17,7 @@ import wget
 def loadMEdmodel():
 	modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	file_name = wget.download(modelurl)
+	file_name_model = wget.download(modelurl)
 	##file_name="myfile.zip"
 	#req=urllib.request.urlretrieve(modelurl, file_name)
 	##req = requests.get(modelurl)
@@ -25,8 +25,13 @@ def loadMEdmodel():
 	##with open(file_name,'wb') as output_file:
 	##    output_file.write(req.content)
 	
-	st.title(file_name)
-	return file_name
+	st.title(file_name_model)
+	cat = CAT.load_model_pack(file_name_model)
+	text = "My simple document with kidney failure and fever and cough and flue"
+	entities = cat.get_entities(text)
+	st.text_area(str(entities))
+		
+	return file_name_model
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -120,13 +125,8 @@ def main():
 	##    output_file.write(req.content)
 	
 	##st.title(file_name)
-	file_name_model=loadMEdmodel()
-	if file_name_model:
-		cat = CAT.load_model_pack(file_name_model)
-		text = "My simple document with kidney failure and fever and cough and flue"
-		entities = cat.get_entities(text)
-		st.text_area(str(entities))
-
+	status=loadMedmodel()
+	st.title(status)
 	# Test it
 	
 	#alltextEntitiesAllStr=loadEntities()
