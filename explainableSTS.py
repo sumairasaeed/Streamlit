@@ -54,8 +54,8 @@ def main():
 	
 	file_name = site_url.split('/')[-1]
 
-	req=urllib.request.urlretrieve(site_url, file_name)
-	
+	#req=urllib.request.urlretrieve(site_url, file_name)
+	req = requests.get(site_url)
 	# Writing the file to the local file system
 	with open(file_name,'wb') as output_file:
 	    output_file.write(req.content)
