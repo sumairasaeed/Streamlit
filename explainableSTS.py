@@ -43,19 +43,20 @@ def main():
 
 	#urllib.request.urlretrieve(url, filename)
 	#site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
-	url = 'https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing'
+	#url = 'https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing'
 	#url='https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
-	status=urllib.request.urlretrieve(url, '/snomedsimple.zip')
+	#status=urllib.request.urlretrieve(url, '/snomedsimple.zip')
 	#site_url = 'https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
-	#file_name = wget.download(site_url)
+	site_url='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip?dl=0'
+	file_name = wget.download(site_url)
 	#print(file_name)
-	st.title(status)
+	st.title(file_name)
 	from medcat.cat import CAT
 
 	# Download the model_pack from the models section in the github repo.
-	cat = CAT.load_model_pack('/snomedsimple.zip')
+	#cat = CAT.load_model_pack('/snomedsimple.zip')
 
-	#cat = CAT.load_model_pack(file_name)
+	cat = CAT.load_model_pack(file_name)
 
 	# Test it
 	text = "My simple document with kidney failure and fever and cough and flue"
