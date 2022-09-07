@@ -26,7 +26,7 @@ def loadMEdmodel():
 	##    output_file.write(req.content)
 	
 	st.title(file_name)
-	return 1
+	return file_name
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -120,7 +120,7 @@ def main():
 	##    output_file.write(req.content)
 	
 	##st.title(file_name)
-	res=loadMEdmodel()
+	file_name=loadMEdmodel()
 	if res==1:
 		cat = CAT.load_model_pack(file_name)
 		text = "My simple document with kidney failure and fever and cough and flue"
