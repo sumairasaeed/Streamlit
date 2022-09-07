@@ -72,13 +72,13 @@ def main():
 	####WORKING
 
 	#file_name = site_url.split('/')[-1]
-	modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	filenamemodelpack = modelurl.split('/')[-1]
+	#####modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	#####filenamemodelpack = modelurl.split('/')[-1]
 	#req=urllib.request.urlretrieve(modelurl, filenamemodelpack)
-	req = requests.get(modelurl)
+	######req = requests.get(modelurl)
 	# Writing the file to the local file system
-	with open(filenamemodelpack,'wb') as output_file:
-	    output_file.write(req.content)
+	#####with open(filenamemodelpack,'wb') as output_file:
+	#######    output_file.write(req.content)
 	print('Downloading Completed')
 	####WORKING
 	#print(file_name)
@@ -96,7 +96,10 @@ def main():
 	#cat = CAT.load_model_pack('/snomedsimple.zip')
 	#cat = CAT.load_model_pack("./code.zip")
 	#cat = CAT.load_model_pack(file_name)
-	cat = CAT.load_model_pack(filenamemodelpack)
+	modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	file_name = wget.download(modelurl)
+	st.title(file_name)
+	cat = CAT.load_model_pack(file_name)
 
 	# Test it
 	text = "My simple document with kidney failure and fever and cough and flue"
