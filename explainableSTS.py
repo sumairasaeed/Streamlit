@@ -59,7 +59,7 @@ def main():
 	##status=urllib.request.urlretrieve(site_url, file_name)
 	##st.title(status)
 	#st.title(file_name)
-	st.title(status)
+	st.title(status.content)
 	open('med.zip', 'wb').write(status.content)
 	from medcat.cat import CAT
 
