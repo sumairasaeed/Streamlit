@@ -15,6 +15,7 @@ MODEL_DIR = "./models/"
 import wget
 
 def loadMedmodel():
+	st.text_area("Explainable Semantic Text Similarity")
 	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##file_name_model = wget.download(modelurl)
