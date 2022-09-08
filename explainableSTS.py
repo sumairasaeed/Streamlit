@@ -60,119 +60,14 @@ def save_uploadedfile(uploadedfile):
      return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
-	st=loadMedmodel()
-	#!python -m wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./models/
-	#import urllib.request
-
-	###########site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
-	#filename = url.split('/')[-1]
-
-	#urllib.request.urlretrieve(url, filename)
-	site_url = 'https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip'
-	url = 'https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing'
-	#url='https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
-	#status=urllib.request.urlretrieve(url, '/snomedsimple.zip')
-	#site_url = 'https://ibacity-my.sharepoint.com/:u:/g/personal/sumairasaeed_iba_edu_pk/ERRCDIV60rJGozNFGi9_IgEBbZOXnuWFlcE8qMXD86gbrg'
-	site_url1='https://www.dropbox.com/s/be6fn4x21tvbdcn/medmen_wstatus_2021_oct.zip'
-	#?dl=0'
-	site_url2='https://www.dropbox.com/s/oev6ut5879qbd68/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip?dl=0'
-	##file_name = wget.download(site_url)
-	#model_pack_path=file_name
-	file_name1="mcmodelpack.zip"
-	###############req = requests.get(url)
-	# Writing the file to the local file system
-	#with open(file_name1,'wb') as output_file:
-	 #   output_file.write(req.content)
-	#print('Downloading Completed')
+	st.text_area("Explainable Semantic Text Similarity")
+	with st.spinner('Wait for it...'):
+		modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+		##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+		cat = CAT.load_model_pack(modelurl)
+		ext = "My simple document with kidney failure and fever and cough and flue"
+		entities = cat.get_entities(text)
+	st.success('Done!')	
 	
-	#file_name = site_url.split('/')[-1]
-
-	#req=urllib.request.urlretrieve(site_url, file_name)
-	#############req = requests.get(site_url1)
-	# Writing the file to the local file system
-	#with open(file_name,'wb') as output_file:
-	 #   output_file.write(req.content)
-	print('Downloading Completed')
-	
-	####WORKING
-
-	#file_name = site_url.split('/')[-1]
-	#modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	#filenamemodelpack = modelurl.split('/')[-1]
-	#req=urllib.request.urlretrieve(modelurl, filenamemodelpack)
-	#req = requests.get(modelurl)
-	# Writing the file to the local file system
-	#with open(filenamemodelpack,'wb') as output_file:
-	#   output_file.write(req.content)
-	#print('Downloading Completed')
-	####WORKING
-	#print(file_name)
-	#st.title(file_name)
-	#file_name='medmen_wstatus_2021_oct.zip'
-	#status = requests.get(site_url)
-	#urllib.request.urlretrieve(site_url, "./code.zip")
-	##status=urllib.request.urlretrieve(site_url, file_name)
-	##st.title(status)
-	#st.title(file_name)
-	
-	####from medcat.cat import CAT
-
-	# Download the model_pack from the models section in the github repo.
-	#cat = CAT.load_model_pack('/snomedsimple.zip')
-	#cat = CAT.load_model_pack("./code.zip")
-	#cat = CAT.load_model_pack(file_name)
-	##modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	##file_name = wget.download(modelurl)
-	##file_name="myfile.zip"
-	#req=urllib.request.urlretrieve(modelurl, file_name)
-	##req = requests.get(modelurl)
-	# Writing the file to the local file system
-	##with open(file_name,'wb') as output_file:
-	##    output_file.write(req.content)
-	
-	##st.title(file_name)
-	#status=loadMedmodel()
-	st.title("Welcome to Explainable Semantic Text Similarity Demo App")
-	#cat = CAT.load_model_pack("mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
-	#ext = "My simple document with kidney failure and fever and cough and flue"
-	#entities = cat.get_entities(text)
-	#st.text_area(str(entities))
-	# Test it
-	
-	#alltextEntitiesAllStr=loadEntities()
-	#raw_text = st.text_area(str(alltextEntitiesAllStr[8]))
-	#for x in alltextEntitiesAllStr[8][3]:
-	#	if x!="":
-	#		st.title(str(icd.get_description(str(x))))
-	#		st.title(str(icd.get_description(icd.get_parent(str(x)))))
-	#raw_text = st.text_area("Enter text here please")
-	#default_world.set_backend(filename = "pym.sqlite3")(
-	#PYM = get_ontology("http://PYM/")
-	#PYM.load()
-	#ICD10 = PYM["ICD10"]
-	#!wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./data/
-	#datafile = st.file_uploader("Upload_dat",type=['.dat'])
-	#if datafile is not None:
-	 #  file_details = {"FileName":datafile.name,"FileType":datafile.type}
-	   #df  = pd.read_csv(datafile)
-	   #st.dataframe(df)
-	  # save_uploadedfile(datafile)
-		
-	#vocab_file = st.file_uploader("upload_vocab", type=[".dat"])
-	#if vocab_file is not None:
-         #   path_in = vocab_file.name
-          #  vocabpath=st.text_area(str(path_in))
-	#else:
-         #   path_in = None
-	
-	#cdb_file = st.file_uploader("upload_cdb", type=[".dat"])
-	#if cdb_file is not None:
-         #   path_in_cdb_file = cdb_file.name
-          #  print(path_in_cdb_file)
-	#else:
-         #   path_in = None
-	#raw_text = st.text_area(str(ICD10["E10"]))
-
 if __name__ == '__main__':
 	main()
