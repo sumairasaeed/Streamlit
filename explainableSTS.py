@@ -3,7 +3,7 @@ import streamlit as st
 import docx2txt
 import streamlit.components.v1 as components
 import pickle
-from owlready2 import *
+#from owlready2 import *
 import simple_icd_10 as icd
 from medcat.vocab import Vocab
 from medcat.cdb import CDB
