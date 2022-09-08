@@ -15,7 +15,7 @@ MODEL_DIR = "./models/"
 import wget
 
 def loadMedmodel():
-	modelurl="https://github.com/sumairasaeed/modelpack/raw/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##file_name_model = wget.download(modelurl)
 	##file_name="myfile.zip"
@@ -26,15 +26,15 @@ def loadMedmodel():
 	##    output_file.write(req.content)
 	
 	
-	file_name_model="mymedmodel1.zip"
-	req = requests.get(modelurl)
-	with open(file_name_model,'wb') as output_file:
-	    output_file.write(req.content)
+	#file_name_model="mymedmodel1.zip"
+	#req = requests.get(modelurl)
+	#with open(file_name_model,'wb') as output_file:
+	#    output_file.write(req.content)
 	#print('Downloading Completed')
-	st.title(file_name_model)
-	##cat = CAT.load_model_pack(file_name_model)
-	##ext = "My simple document with kidney failure and fever and cough and flue"
-	###entities = cat.get_entities(text)
+	#st.title(file_name_model)
+	cat = CAT.load_model_pack(file_name_model)
+	ext = "My simple document with kidney failure and fever and cough and flue"
+	entities = cat.get_entities(text)
 	##st.text_area(str(entities))
 		
 	return file_name_model
@@ -59,7 +59,7 @@ def save_uploadedfile(uploadedfile):
      return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
-	
+	st=loadMedmodel()
 	#!python -m wget https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip -P ./models/
 	#import urllib.request
 
@@ -103,7 +103,7 @@ def main():
 	# Writing the file to the local file system
 	#with open(filenamemodelpack,'wb') as output_file:
 	#   output_file.write(req.content)
-	print('Downloading Completed')
+	#print('Downloading Completed')
 	####WORKING
 	#print(file_name)
 	#st.title(file_name)
@@ -133,10 +133,10 @@ def main():
 	##st.title(file_name)
 	#status=loadMedmodel()
 	st.title("Welcome to Explainable Semantic Text Similarity Demo App")
-	cat = CAT.load_model_pack("mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
-	ext = "My simple document with kidney failure and fever and cough and flue"
-	entities = cat.get_entities(text)
-	st.text_area(str(entities))
+	#cat = CAT.load_model_pack("mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip")
+	#ext = "My simple document with kidney failure and fever and cough and flue"
+	#entities = cat.get_entities(text)
+	#st.text_area(str(entities))
 	# Test it
 	
 	#alltextEntitiesAllStr=loadEntities()
