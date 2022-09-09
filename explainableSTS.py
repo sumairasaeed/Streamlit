@@ -18,10 +18,9 @@ def load_model():
         return CAT.load_model_pack(file_name_model)
 
 def loadMedmodel():
-	st.text_area("Explainable Semantic Text Similarity")
-	modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
+        st.text_area("Explainable Semantic Text Similarity")
+        modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
         file_name_model = wget.download(modelurl)
-
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##file_name_model = wget.download(modelurl)
 	##file_name="myfile.zip"
@@ -30,8 +29,6 @@ def loadMedmodel():
 	# Writing the file to the local file system
 	##with open(file_name,'wb') as output_file:
 	##    output_file.write(req.content)
-	
-	
 	#file_name_model="mymedmodel1.zip"
 	#req = requests.get(modelurl)
 	#with open(file_name_model,'wb') as output_file:
@@ -42,7 +39,6 @@ def loadMedmodel():
 	ext = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	##st.text_area(str(entities))
-		
 	return file_name_model
 
 
