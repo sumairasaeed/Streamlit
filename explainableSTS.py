@@ -15,8 +15,7 @@ import wget
 def load_model():
         modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
         file_name_model = wget.download(modelurl)
-        cat=CAT.load_model_pack(file_name_model)
-        return cat
+        return file_name_model
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -39,7 +38,9 @@ def save_uploadedfile(uploadedfile):
 
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
-	cat = load_model()
+	with st.spinner("Please wait"):
+                file_name_model = load_model()
+                cat=CAT.load_model_pack(file_name_model)
 	text = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	st.text_area(str(entities))
