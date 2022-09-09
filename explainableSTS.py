@@ -15,7 +15,7 @@ MODEL_DIR = "./models/"
 import wget
 
 
-@st.cache
+#@st.cache
 def load_model():
 	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	return CAT.load_model_pack(modelurl)
