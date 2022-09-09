@@ -19,7 +19,8 @@ def downloadFileGdrive():
         url = "https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing"
         output = "medcatLarge.zip"
         file=gdown.download(url, output, quiet=False)
-        return "medcatLarge.zip"
+        st.text_area(str(file))
+        return output
 
 
 @st.cache(ttl=24*60*60)
@@ -49,9 +50,9 @@ def save_uploadedfile(uploadedfile):
 
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
-	with st.spinner("Please wait"):
-                #file_name_model = load_model()
-                file_name_model = downloadFileGdrive()
+        #file_name_model = load_model()
+        file_name_model = downloadFileGdrive()
+        with st.spinner("Please wait"):
                 cat=CAT.load_model_pack(file_name_model)
 	text = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
