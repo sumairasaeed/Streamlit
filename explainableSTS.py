@@ -11,6 +11,17 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
+
+import gdown
+
+@st.cache(ttl=24*60*60)
+def downloadFileGdrive():
+        url = "https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing"
+        output = "medcatLarge.zip"
+        file=gdown.download(url, output, quiet=False)
+        return "medcatLarge.zip"
+
+
 @st.cache(ttl=24*60*60)
 def load_model():
         modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
@@ -39,7 +50,8 @@ def save_uploadedfile(uploadedfile):
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
 	with st.spinner("Please wait"):
-                file_name_model = load_model()
+                #file_name_model = load_model()
+                file_name_model = downloadFileGdrive()
                 cat=CAT.load_model_pack(file_name_model)
 	text = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
