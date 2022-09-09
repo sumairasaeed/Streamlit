@@ -15,10 +15,10 @@ MODEL_DIR = "./models/"
 import wget
 
 
-@st.cache
-def load_model():
-	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	return CAT.load_model_pack(modelurl)
+#@st.cache
+#def load_model():
+#	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+#	return CAT.load_model_pack(modelurl)
 
 
 
@@ -70,10 +70,10 @@ def save_uploadedfile(uploadedfile):
 
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
-	cat = load_model()
-	ext = "My simple document with kidney failure and fever and cough and flue"
-	entities = cat.get_entities(text)
-	st.text_area(str(entities))
+	#cat = load_model()
+	#ext = "My simple document with kidney failure and fever and cough and flue"
+	#entities = cat.get_entities(text)
+	#st.text_area(str(entities))
 	#st.text_area("Explainable Semantic Text Similarity")
 	#with st.spinner('Wait for it...'):
 	#	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
