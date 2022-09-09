@@ -5,20 +5,17 @@ import streamlit.components.v1 as components
 import pickle
 #from owlready2 import *
 import simple_icd_10 as icd
-
 from medcat.cat import CAT
 DATA_DIR = "./data/"
 MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
-
 @st.cache
 def load_model():
-	#modelurl="./mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
+        modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
         file_name_model = wget.download(modelurl)
-	return CAT.load_model_pack(file_name_model)
+        return CAT.load_model_pack(file_name_model)
 
 def loadMedmodel():
 	st.text_area("Explainable Semantic Text Similarity")
