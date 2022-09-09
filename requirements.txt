@@ -1,5 +1,5 @@
 docx2txt==0.8
-streamlit==1.1.11
+streamlit==1.12.2
 pickle-mixin==1.0.2
 simple-icd-10==2.0.1
 medcat==1.2.7
