@@ -15,12 +15,16 @@ import wget
 
 @st.cache
 def load_model():
-	modelurl="./mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	return CAT.load_model_pack(modelurl)
+	#modelurl="./mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
+        file_name_model = wget.download(modelurl)
+	return CAT.load_model_pack(file_name_model)
 
 def loadMedmodel():
 	st.text_area("Explainable Semantic Text Similarity")
-	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
+	modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
+        file_name_model = wget.download(modelurl)
+
 	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
 	##file_name_model = wget.download(modelurl)
 	##file_name="myfile.zip"
