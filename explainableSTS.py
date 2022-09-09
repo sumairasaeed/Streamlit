@@ -50,13 +50,13 @@ def save_uploadedfile(uploadedfile):
 
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
-        #file_name_model = load_model()
-        file_name_model = downloadFileGdrive()
+	file_name_model = downloadFileGdrive()
         with st.spinner("Please wait"):
                 cat=CAT.load_model_pack(file_name_model)
 	text = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	st.text_area(str(entities))
+        #file_name_model = load_model()
 	#st.text_area("Explainable Semantic Text Similarity")
 	#with st.spinner('Wait for it...'):
 	#	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
