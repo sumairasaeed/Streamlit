@@ -39,7 +39,7 @@ def save_uploadedfile(uploadedfile):
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
 	cat = load_model()
-	ext = "My simple document with kidney failure and fever and cough and flue"
+	text = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
 	st.text_area(str(entities))
 	#st.text_area("Explainable Semantic Text Similarity")
