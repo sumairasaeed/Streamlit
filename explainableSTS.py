@@ -10,8 +10,6 @@ DATA_DIR = "./data/"
 MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
-
-
 import gdown
 
 @st.cache(ttl=24*60*60)
@@ -43,19 +41,20 @@ def loadProbCalc():
         alltextEntitiesAllStrForProbCalc = pickle.load(file)
         file.close()
         return alltextEntitiesAllStrForProbCalc
+
 def save_uploadedfile(uploadedfile):
      with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
          f.write(uploadedfile.getbuffer())
      return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
-	st.text_area("Explainable Semantic Text Similarity")
-	file_name_model = downloadFileGdrive()
+        st.text_area("Explainable Semantic Text Similarity")
+        file_name_model = downloadFileGdrive()
         with st.spinner("Please wait"):
                 cat=CAT.load_model_pack(file_name_model)
-	text = "My simple document with kidney failure and fever and cough and flue"
-	entities = cat.get_entities(text)
-	st.text_area(str(entities))
+        text = "My simple document with kidney failure and fever and cough and flue"
+        entities = cat.get_entities(text)
+        st.text_area(str(entities))
         #file_name_model = load_model()
 	#st.text_area("Explainable Semantic Text Similarity")
 	#with st.spinner('Wait for it...'):
