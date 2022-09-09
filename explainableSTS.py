@@ -11,10 +11,11 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
-
+@st.cache(ttl=24*60*60)
 def load_model():
         modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
-        file_name_model = wget.download(modelurl)
+        with st.spinner("Please wait. Loading model..."):
+                file_name_model = wget.download(modelurl)
         return CAT.load_model_pack(file_name_model)
 
 def loadEntities():
