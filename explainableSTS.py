@@ -11,7 +11,7 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 
-@st.cache
+
 def load_model():
         modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
         file_name_model = wget.download(modelurl)
@@ -41,7 +41,7 @@ def main():
 	cat = load_model()
 	ext = "My simple document with kidney failure and fever and cough and flue"
 	entities = cat.get_entities(text)
-	#st.text_area(str(entities))
+	st.text_area(str(entities))
 	#st.text_area("Explainable Semantic Text Similarity")
 	#with st.spinner('Wait for it...'):
 	#	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
