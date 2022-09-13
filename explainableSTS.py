@@ -17,9 +17,6 @@ def downloadFileGdrive():
         url = "https://drive.google.com/file/d/16MagXKJ40efUsoiL2FygIBvXIBHnM906/view?usp=sharing"
 	output = "medcatLarge1.zip"
 	file=gdown.download(url=url, output=output, quiet=False, fuzzy=True)
-        print(file)
-        #file=gdown.download(url, output, quiet=False)
-        #st.text_area(str(file))
         return output
 
 
