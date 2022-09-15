@@ -13,6 +13,7 @@ import wget
 import gdown
 import copy
 import os
+import tokenizers
 #Import the garbage collection module
 import gc
 
