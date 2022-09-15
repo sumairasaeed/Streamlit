@@ -49,12 +49,12 @@ def loadProbCalc():
         return alltextEntitiesAllStrForProbCalc
 
 def save_uploadedfile(uploadedfile):
-     with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
-         f.write(uploadedfile.getbuffer())
-     return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
+	with open(os.path.join("tempDir",uploadedfile.name),"wb") as f:
+        	f.write(uploadedfile.getbuffer())
+	return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 
 def main():
-        st.text_area("Explainable Semantic Text Similarity")
+	st.text_area("Explainable Semantic Text Similarity")
 	file_name_model="medcatLarge1.zip"
 	if os.exists(file_name_model)==False:
         	file_name_model = downloadFileGdrive()
