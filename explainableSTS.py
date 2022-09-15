@@ -29,7 +29,7 @@ def downloadFileGdrive():
 	file=gdown.download(url=url, output=output, quiet=False, fuzzy=True)
 	return output
 
-@st.cache(@st.cache(hash_funcs={tokenizers.Tokenizer: lambda _: None, tokenizers.AddedToken: lambda _: None}))
+@st.cache(hash_funcs={tokenizers.Tokenizer: lambda _: None, tokenizers.AddedToken: lambda _: None})
 def load_model(file):
 	cat=CAT.load_model_pack(file)
 	return cat
