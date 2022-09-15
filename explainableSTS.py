@@ -11,6 +11,15 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 import gdown
+import os
+#Import the garbage collection module
+import gc
+
+#Enable garbage collection
+gc.enable()
+
+#Clean up the memory from unused objects
+gc.collect()
 
 @st.cache(ttl=24*60*60)
 def downloadFileGdrive():
@@ -19,11 +28,12 @@ def downloadFileGdrive():
 	file=gdown.download(url=url, output=output, quiet=False, fuzzy=True)
 	return output
 
-@st.cache(ttl=24*60*60)
-def load_model():
-        modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
-        file_name_model = wget.download(modelurl)
-        return file_name_model
+@st.cache()
+def load_model(file):
+        #modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
+        #file_name_model = wget.download(modelurl)
+	cat=CAT.load_model_pack(file_name_model)
+        return cat
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
@@ -47,10 +57,14 @@ def save_uploadedfile(uploadedfile):
 
 def main():
         st.text_area("Explainable Semantic Text Similarity")
-        file_name_model = downloadFileGdrive()
-        with st.spinner("Please wait"):
-                cat=CAT.load_model_pack(file_name_model)
-        text = "My simple document with kidney failure and fever and cough and flue"
+	file_name_model="medcatLarge1.zip"
+	if os.exists(file_name_model)==False:
+        	file_name_model = downloadFileGdrive()
+	else:
+		load_model(file_name_model)
+        	#with st.spinner("Please wait"):
+                #	cat=CAT.load_model_pack(file_name_model)
+        text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
         entities = cat.get_entities(text)
         st.text_area(str(entities))
         #file_name_model = load_model()
