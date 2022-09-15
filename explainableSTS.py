@@ -30,10 +30,8 @@ def downloadFileGdrive():
 
 @st.cache()
 def load_model(file):
-        #modelurl="https://medcat.rosalind.kcl.ac.uk/media/medmen_wstatus_2021_oct.zip"
-        #file_name_model = wget.download(modelurl)
-	cat=CAT.load_model_pack(file_name_model)
-        return cat
+	cat=CAT.load_model_pack(file)
+	return cat
 
 def loadEntities():
 	#File containing mapped codes in textual form for 409 indus records
