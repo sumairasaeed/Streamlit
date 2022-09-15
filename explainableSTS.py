@@ -11,6 +11,7 @@ MODEL_DIR = "./models/"
 #model_pack_path = MODEL_DIR + "medmen_wstatus_2021_oct.zip"
 import wget
 import gdown
+import copy
 import os
 #Import the garbage collection module
 import gc
@@ -28,7 +29,7 @@ def downloadFileGdrive():
 	file=gdown.download(url=url, output=output, quiet=False, fuzzy=True)
 	return output
 
-@st.cache()
+@st.cache(@st.cache(hash_funcs={tokenizers.Tokenizer: lambda _: None, tokenizers.AddedToken: lambda _: None}))
 def load_model(file):
 	cat=CAT.load_model_pack(file)
 	return cat
@@ -59,9 +60,9 @@ def main():
 	if os.path.exists(file_name_model)==False:
         	file_name_model = downloadFileGdrive()
 	else:
-		load_model(file_name_model)
+		catmodel = copy.deepcopy(load_model(file_name_model))
 	text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
-	entities = cat.get_entities(text)
+	entities = catmodel.get_entities(text)
 	st.text_area(str(entities))	
 if __name__ == '__main__':
 	main()
