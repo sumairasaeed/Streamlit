@@ -60,8 +60,6 @@ def main():
         	file_name_model = downloadFileGdrive()
 	else:
 		load_model(file_name_model)
-        	#with st.spinner("Please wait"):
-                #cat=CAT.load_model_pack(file_name_model)
         text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
         entities = cat.get_entities(text)
         st.text_area(str(entities))	
