@@ -60,8 +60,7 @@ def main():
 	file_name_model="medcatLarge1.zip"
 	if os.path.exists(file_name_model)==False:
         	file_name_model = downloadFileGdrive()
-	else:
-		catmodel = copy.deepcopy(load_model(file_name_model))
+	catmodel = copy.deepcopy(load_model(file_name_model))
 	text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
 	entities = catmodel.get_entities(text)
 	st.text_area(str(entities))	
