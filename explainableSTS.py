@@ -56,12 +56,12 @@ def save_uploadedfile(uploadedfile):
 def main():
 	st.text_area("Explainable Semantic Text Similarity")
 	file_name_model="medcatLarge1.zip"
-	if os.exists(file_name_model)==False:
+	if os.path.exists(file_name_model)==False:
         	file_name_model = downloadFileGdrive()
 	else:
 		load_model(file_name_model)
 	text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
 	entities = cat.get_entities(text)
-        st.text_area(str(entities))	
+	st.text_area(str(entities))	
 if __name__ == '__main__':
 	main()
