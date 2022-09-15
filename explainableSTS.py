@@ -61,19 +61,10 @@ def main():
 	else:
 		load_model(file_name_model)
         	#with st.spinner("Please wait"):
-                #	cat=CAT.load_model_pack(file_name_model)
+                #cat=CAT.load_model_pack(file_name_model)
         text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
         entities = cat.get_entities(text)
-        st.text_area(str(entities))
-        #file_name_model = load_model()
-	#st.text_area("Explainable Semantic Text Similarity")
-	#with st.spinner('Wait for it...'):
-	#	modelurl="mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	#	##modelurl="https://github.com/sumairasaeed/modelpack/blob/main/mc_modelpack_snomed_int_3_feb_2022_a474096eb4566638.zip"
-	#	cat = CAT.load_model_pack(modelurl)
-	#	ext = "My simple document with kidney failure and fever and cough and flue"
-	#	entities = cat.get_entities(text)
-	#st.success('Done!')	
+        st.text_area(str(entities))	
 	
 if __name__ == '__main__':
 	main()
