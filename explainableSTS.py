@@ -39,25 +39,51 @@ def load_model(file):
 
 #file_name_model="medcatLarge1.zip"
 
-
-def querySubmit(query):
-    if "modelpath" in st.session_state:
-        if os.path.exists(st.session_state.modelpath)==False:
-         	file_name_model = downloadFileGdrive()
-        else:
-            if "catmodel" not in st.session_state:
+def querySubmit(query, placeholder):
+    if "catmodel" not in st.session_state:
+        if "modelpath" in st.session_state:
+            if os.path.exists(st.session_state.modelpath)==False:
+                st.session_state.modelpath= downloadFileGdrive()
                 st.session_state.catmodel = load_model(st.session_state.modelpath)
-            
-                
-    else:
-        st.session_state.modelpath=downloadFileGdrive()
-        st.session_state.catmodel = load_model(st.session_state.modelpath)
+            else:
+                st.session_state.catmodel = load_model(st.session_state.modelpath)
+        else:
+            st.session_state.modelpath= downloadFileGdrive()
+            st.session_state.catmodel = load_model(st.session_state.modelpath)
+        
         
     entities = st.session_state.catmodel.get_entities(query)
-    st.session_state.entities=entities
-    placeholder.markdown(str(st.session_state.entities))
-    
-    
+    if entities:
+        st.session_state.entities=entities
+    else:
+        st.session_state.entities="None"
+    with placeholder:
+        placeholder=st.markdown(str(st.session_state.entities))
+    #st.session_state.entities=entities
+    #if st.session_state.submit:
+        
+    #st.write(str(st.session_state.entities))
+# =============================================================================
+#     
+# def querySubmit(query, placeholder):
+#     if "modelpath" in st.session_state:
+#         if os.path.exists(st.session_state.modelpath)==False:
+#          	file_name_model = downloadFileGdrive()
+#         else:
+#             if "catmodel" not in st.session_state:
+#                 st.session_state.catmodel = load_model(st.session_state.modelpath)
+#             
+#                 
+#     else:
+#         st.session_state.modelpath=downloadFileGdrive()
+#         st.session_state.catmodel = load_model(st.session_state.modelpath)
+#         
+#     entities = st.session_state.catmodel.get_entities(query)
+#     st.session_state.entities=entities
+#     st.write(str(st.session_state.entities))
+#     placeholder.markdown(str(st.session_state.entities))
+#     
+# =============================================================================
 
 # =============================================================================
 # @st.cache(ttl=24*60*60)
@@ -97,25 +123,41 @@ def querySubmit(query):
 # 	return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 # 
 # =============================================================================
-#def main():
-st.title("Explainable Semantic Text Similarity of Medical Notes")
+def main():
+    st.title("Explainable Semantic Text Similarity of Medical Notes")
+    
 
+        
+    #st.text_input(l6abel, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False)
+    if "querystate" not in st.session_state:
+        querytext=st.text_input("Query trxt", value="", max_chars=None, key="query", placeholder="Enter query text here")
+    else:
+        querytext=st.text_input("Query trxt", value=st.session_state.quarystate, key="query")
+    
+    buttonsubmit=st.empty()
+    placeholder = st.empty()
+    
+    # Replace the placeholder with some text:
+    #placeholder.text("Hello")
+        
+    buttonsubmit=st.button("Submit", key="submit", on_click=querySubmit, args=(querytext,placeholder))
+    if st.session_state.submit:
+        if "entities" in st.session_state:
+                  with placeholder:
+                      placeholder=st.markdown(str(st.session_state.entities))
+      
+
+# =============================================================================
+#     if "entities" in st.session_state:
+#         with placeholder:
+#             placeholder=st.markdown(str(st.session_state.entities))
+#     else:
+#         placeholder = st.empty()
+# 
+# =============================================================================
 
     
-#st.text_input(label, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False)
-if "querystate" not in st.session_state:
-    querytext=st.text_input("Query trxt", value="", max_chars=None, key="query", placeholder="Enter query text here")
-else:
-    querytext=st.text_input("Query trxt", value=st.session_state.quarystate, key="query")
-submitbutton=st.button("Submit", key="submit", on_click=querySubmit, args=(querytext,))
-
-placeholder = st.empty()
-
-# Replace the placeholder with some text:
-#placeholder.text("Hello")
-if "entities" in st.session_state:
-    placeholder.markdown(str(st.session_state.entities))
-
+    
 # =============================================================================
 #     if(st.button("Submit")):
 #                 entities = catmodel.get_entities(query)
@@ -125,5 +167,5 @@ if "entities" in st.session_state:
 	#text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
 	#entities = catmodel.get_entities(text)
 	#st.text_area(str(entities))
-#if __name__ == '__main__':
-#	main()
+if __name__ == '__main__':
+	main()
