@@ -55,6 +55,8 @@ def querySubmit(query):
         
     entities = st.session_state.catmodel.get_entities(query)
     st.session_state.entities=entities
+    placeholder.markdown(str(st.session_state.entities))
+    
     
 
 # =============================================================================
@@ -95,21 +97,25 @@ def querySubmit(query):
 # 	return st.success("Saved File:{} to tempDir".format(uploadedfile.name))
 # 
 # =============================================================================
-def main():
-    st.title("Explainable Semantic Text Similarity of Medical Notes")
-    
+#def main():
+st.title("Explainable Semantic Text Similarity of Medical Notes")
 
-        
-    #st.text_input(label, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False)
-    if "querystate" not in st.session_state:
-        querytext=st.text_input("Query trxt", value="", max_chars=None, key="query", placeholder="Enter query text here")
-    else:
-        querytext=st.text_input("Query trxt", value=st.session_state.quarystate, key="query")
-    submitbutton=st.button("Submit", key="submit", on_click=querySubmit, args=(querytext,))
 
-    if "entities" in st.session_state:
-        st.text(str(st.session_state.entities))
     
+#st.text_input(label, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False)
+if "querystate" not in st.session_state:
+    querytext=st.text_input("Query trxt", value="", max_chars=None, key="query", placeholder="Enter query text here")
+else:
+    querytext=st.text_input("Query trxt", value=st.session_state.quarystate, key="query")
+submitbutton=st.button("Submit", key="submit", on_click=querySubmit, args=(querytext,))
+
+placeholder = st.empty()
+
+# Replace the placeholder with some text:
+#placeholder.text("Hello")
+if "entities" in st.session_state:
+    placeholder.markdown(str(st.session_state.entities))
+
 # =============================================================================
 #     if(st.button("Submit")):
 #                 entities = catmodel.get_entities(query)
@@ -119,5 +125,5 @@ def main():
 	#text = "A 45-year old male patient was admitted in emergency department. He was feeling Fever and Cough and Flue. Also complained of abdominal pain"
 	#entities = catmodel.get_entities(text)
 	#st.text_area(str(entities))
-if __name__ == '__main__':
-	main()
+#if __name__ == '__main__':
+#	main()
