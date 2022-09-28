@@ -1,7 +1,15 @@
 import requests
-from pymedtermino.all import *
+
+import pymedtermino
+pymedtermino.LANGUAGE = "en"
+pymedtermino.DATA_DIR="./PyMedTermino-0.3.3"
 from pymedtermino import *
+from pymedtermino.icd10 import *
+pymedtermino.REMOVE_SUPPRESSED_CONCEPTS = True
 from pymedtermino.snomedct import *
+#from pymedtermino.all import *
+#from pymedtermino import *
+#from pymedtermino.snomedct import *
 import streamlit as st
 import docx2txt
 import streamlit.components.v1 as components
