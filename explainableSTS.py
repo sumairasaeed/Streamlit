@@ -1,4 +1,7 @@
 import requests
+from pymedtermino.all import *
+from pymedtermino import *
+from pymedtermino.snomedct import *
 import streamlit as st
 import docx2txt
 import streamlit.components.v1 as components
@@ -125,7 +128,7 @@ def querySubmit(query, placeholder):
 # =============================================================================
 def main():
     st.title("Explainable Semantic Text Similarity of Medical Notes")
-    
+    st.text(SNOMEDCT[302509004])
 
         
     #st.text_input(l6abel, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False)
