@@ -6,3 +6,4 @@ simple-icd-10==2.0.1
 medcat==1.3
 wget==3.2
 protobuf==3.20
+PyMedTermino==0.3.3
