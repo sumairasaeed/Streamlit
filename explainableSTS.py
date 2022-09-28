@@ -1,12 +1,4 @@
 import requests
-
-import pymedtermino
-pymedtermino.LANGUAGE = "en"
-pymedtermino.DATA_DIR="./PyMedTermino-0.3.3"
-from pymedtermino import *
-from pymedtermino.icd10 import *
-pymedtermino.REMOVE_SUPPRESSED_CONCEPTS = True
-from pymedtermino.snomedct import *
 #from pymedtermino.all import *
 #from pymedtermino import *
 #from pymedtermino.snomedct import *
@@ -136,9 +128,7 @@ def querySubmit(query, placeholder):
 # =============================================================================
 def main():
     st.title("Explainable Semantic Text Similarity of Medical Notes")
-    st.text(SNOMEDCT[302509004])
-
-        
+    
     #st.text_input(l6abel, value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, args=None, kwargs=None, *, placeholder=None, disabled=False)
     if "querystate" not in st.session_state:
         querytext=st.text_input("Query trxt", value="", max_chars=None, key="query", placeholder="Enter query text here")
