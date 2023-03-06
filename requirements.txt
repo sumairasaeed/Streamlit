@@ -1,5 +1,5 @@
 docx2txt==0.8
-streamlit==1.2
+streamlit==0.85
 gdown==4.5.1
 pickle-mixin==1.0.2
 simple-icd-10==2.0.1
