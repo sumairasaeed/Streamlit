@@ -1,4 +1,4 @@
-pip install scikit-learn
+scikit-learn
 docx2txt==0.8
 streamlit==1.19
 gdown==4.5.1
